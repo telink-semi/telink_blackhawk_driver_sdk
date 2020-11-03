@@ -442,11 +442,11 @@ _attribute_ram_code_ unsigned int adc_set_sample_and_get_result(void)
 	if(mode_select==1){
 		if(adc_average>0x8000)
 		{
-				Volt_B0 = (0x10000-adc_code)*ADC_Pre_Scale*300*Vref_tab[ADC_Vref]/0x8000*63/64;
+				Volt_B0 = (0x10000-adc_code)*ADC_Pre_Scale*300*Vref_tab[ADC_Vref]/0x2000*63/64;
 		}
 		else
 		{
-				Volt_B0 = adc_code*ADC_Pre_Scale*300*Vref_tab[ADC_Vref]/0x8000*63/64;
+				Volt_B0 = adc_code*ADC_Pre_Scale*300*Vref_tab[ADC_Vref]/0x2000*63/64;
 		}
 		return Volt_B0;
 	}
@@ -456,22 +456,22 @@ _attribute_ram_code_ unsigned int adc_set_sample_and_get_result(void)
 		{
 			if(adc_average>0x2000)
 			{
-				Vbat = (0x8000-adc_code)*300*Vref_tab[ADC_Vref]*ADC_Pre_Scale/0x8000*63/64;
+				Vbat = (0x8000-adc_code)*300*Vref_tab[ADC_Vref]*ADC_Pre_Scale/0x2000*63/64;
 			}
 			else
 			{
-				Vbat = adc_code*300*Vref_tab[ADC_Vref]*ADC_Pre_Scale/0x8000*63/64;
+				Vbat = adc_code*300*Vref_tab[ADC_Vref]*ADC_Pre_Scale/0x2000*63/64;
 			}
 		}
 		else
 		{
 			if(adc_average>0x2000)
 			{
-				Vbat = (0x8000-adc_code)*300*Vref_tab[ADC_Vref]*ADC_VBAT_Scale/0x8000*63/64;
+				Vbat = (0x8000-adc_code)*300*Vref_tab[ADC_Vref]*ADC_VBAT_Scale/0x2000*63/64;
 			}
 			else
 			{
-				Vbat = adc_code*300*Vref_tab[ADC_Vref]*ADC_VBAT_Scale/0x8000*63/64;
+				Vbat = adc_code*300*Vref_tab[ADC_Vref]*ADC_VBAT_Scale/0x2000*63/64;
 			}
 		}
 		return Vbat;

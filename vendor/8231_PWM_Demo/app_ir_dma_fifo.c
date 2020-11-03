@@ -59,7 +59,7 @@ IR_DMA_Buff[index++]= pwm_ir_dma_fifo_set_waveform(1, PWM0_PULSE_SHADOW, 560 * C
 IR_DMA_Buff[index++]= pwm_ir_dma_fifo_set_waveform(0, PWM0_PULSE_SHADOW, 1690 * CLOCK_SYS_CLOCK_1US/IR_DMA_SHADOW_MAX_TICK);
 IR_DMA_Buff[index++]= pwm_ir_dma_fifo_set_waveform(1, PWM0_PULSE_SHADOW, 560 * CLOCK_SYS_CLOCK_1US/IR_DMA_SHADOW_MAX_TICK);
 
-unsigned int length = index*2;
+unsigned int length = index*2 - 4;//The first four bytes are data length bytes, not included in the actual length to be sent
 unsigned char* buff = &IR_DMA_Buff[0];
 buff[0]= length&0xff;
 buff[1]= (length>>8)&0xff;

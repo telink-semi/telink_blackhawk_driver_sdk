@@ -57,7 +57,7 @@ void user_init()
 			gpio_set_up_30k(GPIO_PD2);
 		}
 #elif(PM_MODE==SUSPEND_PAD_WAKEUP)
-	pm_set_gpio_wakeup(GPIO_PB3, Level_High, 1);  //gpio pad wakeup
+	pm_set_gpio_wakeup(GPIO_PB3, LEVEL_HIGH, 1);  //gpio pad wakeup
 	gpio_set_up_down_resistor(GPIO_PB3, GPIO_PULL_DN_100K);
 #elif(PM_MODE == DEEP_PAD_WAKEUP)
 	pm_set_gpio_wakeup(GPIO_PB7, LEVEL_LOW, 1);

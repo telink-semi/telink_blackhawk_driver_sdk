@@ -1,10 +1,22 @@
 
 #include "gpio.h"
 #include "analog.h"
+
+/**Steps to set GPIO as a multiplexing function is as follows.
+ * Step 1: Set GPIO as a multiplexing function.
+ * Step 2: Disable GPIO function.
+ * NOTE: Failure to follow the above steps may result in risks.
+ */
 /**
  * @brief      This function servers to initialization all GPIO.
  * @param[in]  none.
  * @return     none.
+ */
+/**Processing methods of unused GPIO
+ * Set it to high resistance state and set it to open pull-up or pull-down resistance to
+ * let it be in the determined state.When GPIO uses internal pull-up or pull-down resistance,
+ * do not use pull-up or pull-down resistance on the board in the process of practical
+ * application because it may have the risk of electric leakage .
  */
 void gpio_init(void){
 

@@ -41,7 +41,8 @@
 #include "drivers/8231/qdec.h"
 #include "drivers/8231/dma.h"
 #include "drivers/8231/timer.h"
-
+#include "drivers/8231/emi.h"
+#include "drivers/8231/otp.h"
 /*! \mainpage API User guide for TLSR8231F512
 \n
 __Keyword:__ \n

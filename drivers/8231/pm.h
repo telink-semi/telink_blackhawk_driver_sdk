@@ -59,7 +59,6 @@
 
 #define SYS_DEEP_ANA_REG 0x3e             //ana_3e system use for external 32k mode, user can not use
 
-
 #define BLT_RESET_WAKEUP_TIME_2000		1
 
 #if (BLT_RESET_WAKEUP_TIME_2000)

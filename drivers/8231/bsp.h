@@ -111,6 +111,14 @@ typedef enum {
 #define READ_REG16(addr)		(*(volatile unsigned short*)(REG_BASE_ADDR + (addr)))
 #define READ_REG32(addr)		(*(volatile unsigned long*) (REG_BASE_ADDR + (addr)))
 
+#define write_reg8   WRITE_REG8
+#define write_reg16  WRITE_REG16
+#define write_reg32  WRITE_REG32
+
+#define read_reg8    READ_REG8
+#define	read_reg16   READ_REG16
+#define read_reg32   READ_REG32
+
 #define TCMD_UNDER_BOTH			0xc0
 #define TCMD_UNDER_RD			0x80
 #define TCMD_UNDER_WR			0x40

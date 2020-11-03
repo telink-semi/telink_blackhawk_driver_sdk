@@ -1,3 +1,28 @@
+/********************************************************************************************************
+ * @file     rf_drv.h
+ *
+ * @brief    This is the head file for TLSR8231
+ *
+ * @author	 Telink
+ * @date    May 24, 2019
+ *
+ * @par      Copyright (c) 2018, Telink Semiconductor (Shanghai) Co., Ltd.
+ *           All rights reserved.
+ *
+ *           The information contained herein is confidential property of Telink
+ *           Semiconductor (Shanghai) Co., Ltd. and is available under the terms
+ *           of Commercial License Agreement between Telink Semiconductor (Shanghai)
+ *           Co., Ltd. and the licensee or the terms described here-in. This heading
+ *           MUST NOT be removed from this file.
+ *
+ *           Licensees are granted free, non-transferable use of the information in this
+ *           file under Mutual Non-Disclosure Agreement. NO WARRENTY of ANY KIND is provided.
+ * @par      History:
+ * 			 1.initial release(May. 24 2019)
+ *
+ * @version  A001
+ *
+ *******************************************************************************************************/
 #ifndef _RF_DRV_H
 #define _RF_DRV_H
 
@@ -35,26 +60,33 @@ typedef enum {
     RF_MODE_AUTO=2
 } RF_StatusTypeDef;
 
+typedef enum{
+	RF_MODE_BLE_1M_NO_PN   		    = 0,
+	RF_MODE_BLE_1M					= 1,
+	RF_MODE_BLE_2M					= 2,
+    RF_MODE_BLE_2M_NO_PN			= 3,
+    RF_MODE_BLE_250K				= 4,
+    RF_MODE_BLE_500K				= 5,
+    RF_MODE_PRI_1M     				= 6,
+    RF_MODE_PRI_2M					= 7,
+    RF_MODE_PRI_250K				= 8,
+    RF_MODE_PRI_500K				= 9,
+
+}RF_ModeTypeDef;
 
 typedef enum {
-	RF_POWER_7P9dBm		= 0,
-	RF_POWER_7dBm		= 1,
-	RF_POWER_6P3dBm		= 2,
-	RF_POWER_4P9dBm		= 3,
-	RF_POWER_3P3dBm		= 4,
-	RF_POWER_1P6dBm		= 5,
-	RF_POWER_0dBm		= 6,
-	RF_POWER_m1P5dBm	= 7,
-	RF_POWER_m3P1dBm	= 8,
-	RF_POWER_m5dBm		= 9,
-	RF_POWER_m7P3dBm	= 10,
-	RF_POWER_m9P6dBm	= 11,
-	RF_POWER_m11P5dBm	= 12,
-	RF_POWER_m13P3dBm	= 13,
-	RF_POWER_m16dBm		= 14,
-	RF_POWER_m17P8dBm	= 15,
-	RF_POWER_m19P5dBm	= 16,
-	RF_POWER_OFF		= 17,
+	RF_POWER_7dBm		= 0,
+	RF_POWER_6dBm		= 1,
+	RF_POWER_3dBm		= 2,
+	RF_POWER_2dBm		= 3,
+	RF_POWER_0dBm		= 4,
+	RF_POWER_m1dBm		= 5,
+	RF_POWER_m2dBm		= 6,
+	RF_POWER_m10dBm		= 7,
+	RF_POWER_m12dBm		= 8,
+	RF_POWER_m14dBm		= 9,
+	RF_POWER_m15dBm		= 10,
+	RF_POWER_m17dBm		= 11,
 }RF_TxPowerTypeDef;
 
 

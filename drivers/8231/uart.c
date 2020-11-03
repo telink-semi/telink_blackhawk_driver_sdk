@@ -57,16 +57,16 @@ void uart_set_pin(UART_TxPinDef tx_pin,UART_RxPinDef rx_pin)
 	unsigned short reg;
 	//note: pullup setting must before uart gpio config, cause it will lead to ERR data to uart RX buffer(confirmed by sihui&sunpeng)
 	//PM_PIN_PULLUP_1M   GPIO_PULL_UP_10K
-	gpio_set_up_down_resistor(tx_pin, GPIO_PULL_UP_1M);  //must, for stability and prevent from current leakage
-	gpio_set_up_down_resistor(rx_pin, GPIO_PULL_UP_10K);  //must  for stability and prevent from current leakage
-
-
-
-	bit = tx_pin & 0xff;
-	BM_CLR(reg_gpio_gpio_func(tx_pin), bit);
-	bit = rx_pin & 0xff;
-	BM_CLR(reg_gpio_gpio_func(rx_pin), bit);
-
+	if( tx_pin==UART_TX_PB4 ){
+		gpio_set_up_down_resistor(tx_pin, GPIO_PULL_UP_1M);  //must, for stability and prevent from current leakage
+	}else{
+		gpio_set_up_30k(tx_pin);
+	}
+	if( rx_pin==UART_RX_PB5 ){
+		gpio_set_up_down_resistor(rx_pin, GPIO_PULL_UP_10K);  //must  for stability and prevent from current leakage
+	}else{
+		gpio_set_up_30k(rx_pin);
+	}
 
 	//TX: GPIO_PB4  GPIO_PC4
 	//RX: GPIO_PB5  GPIO_PC5
@@ -83,6 +83,11 @@ void uart_set_pin(UART_TxPinDef tx_pin,UART_RxPinDef rx_pin)
 		mask= (unsigned char)~(BIT(1)|BIT(0));
 		val = BIT(0)|BIT(1);
 	}
+	else if(tx_pin == UART_TX_PD2)
+	{
+		mask= (unsigned char)~(BIT(4)|BIT(5));
+		val = BIT(4);
+	}
 	reg = 0x5a8 + ((tx_pin>>8)<<1) + ((tx_pin&0x0f0) ? 1 : 0 );
 	WRITE_REG8(reg, ( READ_REG8(reg) & mask) | val);
 
@@ -97,8 +102,18 @@ void uart_set_pin(UART_TxPinDef tx_pin,UART_RxPinDef rx_pin)
 		mask= (unsigned char)~(BIT(2)|BIT(3));
 		val = BIT(2)|BIT(3);
 	}
+	else if(rx_pin ==  UART_RX_PD3)
+	{
+		mask= (unsigned char)~(BIT(6)|BIT(7));
+		val = BIT(6);
+	}
 	reg = 0x5a8 + ((rx_pin>>8)<<1) + ((rx_pin&0x0f0) ? 1 : 0 );
 	WRITE_REG8(reg, ( READ_REG8(reg) & mask) | val);
+
+	bit = tx_pin & 0xff;
+	BM_CLR(reg_gpio_gpio_func(tx_pin), bit);
+	bit = rx_pin & 0xff;
+	BM_CLR(reg_gpio_gpio_func(rx_pin), bit);
 
 	gpio_set_input_en(tx_pin, 1);  //experiment shows that tx_pin should open input en(confirmed by qiuwei)
 	gpio_set_input_en(rx_pin, 1);  //
@@ -632,6 +647,13 @@ unsigned char uart_is_parity_error(void)
  * @brief     This function clears parity error status once when it occurs.
  * @param[in] none
  * @return    none
+ *
+ * Note:
+ *(1)DMA mode
+ * RX FIFO will also be cleared when parity error flag is cleared .
+ *(2)NON-DMA mode
+ * When parity error occurs, clear parity error flag after UART receives the data.
+ * Cycle the four registers (0x90 0x91 0x92 0x93) from register "0x90" to get data when UART receives the data next time.
  */
 void uart_clear_parity_error(void)
 {

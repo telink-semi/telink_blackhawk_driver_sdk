@@ -66,40 +66,75 @@ void clock_init(SYS_CLK_TYPEDEF SYS_CLK)
 	WRITE_REG8(0x66,SYS_CLK);
 }
 #endif
-/**
- * @brief     This function performs to select 24M as the system clock source.
- * @param[in] none.
- * @return    none.
- */
-void rc_24m_cal (void)
-{
-	sub_wr_ana(0x83, 3, 6, 4);	//wait len
-	sub_wr_ana(0x83, 0, 1, 1);	//sel calbr 24m
-	sub_wr_ana(0x02, 1, 4, 4);	//manual off
-	sub_wr_ana(0x83, 1, 0, 0);	//calbr en on
-	while((analog_read(0x84) & 0x01) == 0);	//wait done
-	unsigned char cap = analog_read(0x85);	//read 24m cap result
-	analog_write(0x30, cap);		//write 24m cap into manual register
-	sub_wr_ana(0x83, 0, 0, 0);	//calbr en off
-	sub_wr_ana(0x02, 0, 4, 4);	//manual on
 
+/**
+ * @Brief:  24M RC Calibration.(error: 0.01%)
+ * @Param:  None.
+ * @Return: None.
+ */
+void rc_24m_cal(void)
+{
+	unsigned char temp = 0;
+
+	temp = analog_read(0x02);
+	temp |= (1<<4);
+	analog_write(0x02,temp);
+
+	/* Enable 24M RC calibration. */
+	temp = analog_read(0x83);
+	temp |= (1<<0);
+	temp &= ~(1<<1);
+	analog_write(0x83,temp);
+
+	/* Wait Calibration completely. */
+	while(!(analog_read(0x84) & 0x01));
+
+	unsigned char CalValue = 0;
+	CalValue = analog_read(0x85);
+	analog_write(0x30,CalValue);
+
+	/* Disable 24M RC calibration. */
+	temp = analog_read(0x83);
+	temp &= ~(1<<0);
+	analog_write(0x83,temp);
+
+	temp = analog_read(0x02);
+	temp &= ~(1<<4);
+	analog_write(0x02,temp);
 }
 
 /**
- * @brief     This function performs to select 32K as the system clock source.
- * @param[in] none.
- * @return    none.
+ * @Brief: MCU internal 32K RC calibrate.Calibration accuracy is 1.6%
+ * @Param: None.
+ * @ReVal: None.
  */
-void rc_32k_cal (void)
-{
-	sub_wr_ana(0x83, 3, 6, 4);	//wait len
-	sub_wr_ana(0x83, 1, 1, 1);	//sel calbr 32k
-	sub_wr_ana(0x02, 1, 2, 2);	//manual off
-	sub_wr_ana(0x83, 1, 0, 0);	//calbr en on
-	while((analog_read(0x84) & 0x01) == 0);	//wait done
-	unsigned char cap = analog_read(0x85);	//read 32k cap result
-	analog_write(0x2f, cap);		//write 32k cap into manual register
-	sub_wr_ana(0x83, 0, 0, 0);	//calbr en off
-	sub_wr_ana(0x02, 0, 2, 2);	//manual on
+void rc_32k_cal(void){
+	unsigned char temp = 0;
+
+	temp = analog_read(0x02);
+	temp |= (1<<2);
+	analog_write(0x02, temp);
+
+	/* Enable 32K RC calibration. */
+	temp = analog_read(0x83);
+	temp |= (1<<0);//Enable
+	temp |= (1<<1);//Select calibrate 32k RC
+	analog_write(0x83,temp);
+
+	/* Wait Calibration completely. */
+	while(!(analog_read(0x84) & 0x01));
+
+	unsigned char CalValue = 0;
+	CalValue = analog_read(0x85);
+	analog_write(0x2f,CalValue);
+
+	/* Disable 32K RC calibration. */
+	temp = analog_read(0x83);
+	temp &= ~(1<<0);
+	analog_write(0x83,temp);
+
+	temp = analog_read(0x02);
+	temp &= ~(1<<2);
+	analog_write(0x02, temp);
 }
 

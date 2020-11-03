@@ -268,6 +268,13 @@ extern unsigned char uart_is_parity_error(void);
  * @brief     This function clears parity error status once when it occurs.
  * @param[in] none
  * @return    none
+ *
+ * Note:
+ *(1)DMA mode
+ * RX FIFO will also be cleared when parity error flag is cleared .
+ *(2)NON-DMA mode
+ * When parity error occurs, clear parity error flag after UART receives the data.
+ * Cycle the four registers (0x90 0x91 0x92 0x93) from register "0x90" to get data when UART receives the data next time.
  */
 extern void uart_clear_parity_error(void);
 

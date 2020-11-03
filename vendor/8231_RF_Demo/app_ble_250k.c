@@ -88,7 +88,7 @@ void main_loop (void)
 	{
 		if(rf_is_rx_finish())
 			{
-				if(RF_BLE_250K_PACKET_CRC_OK(rx_packet)&&RF_BLE_PACKET_LENGTH_OK(rx_packet))
+				if(RF_250K_PACKET_CRC_OK(rx_packet)&&RF_BLE_PACKET_LENGTH_OK(rx_packet))
 				{
 					gpio_toggle(LED1);
 					rx_cnt++;
@@ -145,14 +145,14 @@ void main_loop (void)
 	{
 		if(rf_is_rx_finish())
 			{
-				if(RF_BLE_250K_PACKET_CRC_OK(rx_packet)&&RF_BLE_PACKET_LENGTH_OK(rx_packet))
+				if(RF_250K_PACKET_CRC_OK(rx_packet)&&RF_BLE_PACKET_LENGTH_OK(rx_packet))
 				{
 					gpio_toggle(LED1);
 					rx_cnt++;
 				}
 				rf_clr_rx_finish();
 				rf_set_tx_rx_off_auto();
-			}}
+			}
 	}
 #endif
 }

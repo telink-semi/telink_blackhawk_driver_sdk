@@ -38,7 +38,7 @@
 #define AUTO_MODE 			    AUTO
 
 #define RF_FREQ					47//ble:RF_FREQ*2+2   private&nordic:2400+RF_FREQ
-#define RF_POWER				RF_POWER_m1P5dBm
+#define RF_POWER				RF_POWER_m2dBm
 #define ACCESS_CODE				0x39517696
 
 volatile unsigned int rx_cnt=0;

@@ -328,10 +328,22 @@ for example:
 #define D3_TX_CYC2PA    (2<<6)
 #define D3_RESERVE_3    (3<<6)
 
+/**Steps to set GPIO as a multiplexing function is as follows.
+ * Step 1: Set GPIO as a multiplexing function.
+ * Step 2: Disable GPIO function.
+ * NOTE: Failure to follow the above steps may result in risks.
+ */
+
 /**
  * @brief      This function servers to initialization all GPIO.
  * @param[in]  none.
  * @return     none.
+ */
+/**Processing methods of unused GPIO
+ * Set it to high resistance state and set it to open pull-up or pull-down resistance to
+ * let it be in the determined state.When GPIO uses internal pull-up or pull-down resistance,
+ * do not use pull-up or pull-down resistance on the board in the process of practical
+ * application because it may have the risk of electric leakage .
  */
 void gpio_init(void);
 
@@ -501,12 +513,16 @@ static inline void gpio_set_interrupt_risc0(GPIO_PinTypeDef pin, GPIO_PolTypeDef
 {
 	unsigned char	bit = pin & 0xff;
 	BM_SET(reg_gpio_irq_risc0_en(pin), bit);
-	reg_irq_mask |= FLD_IRQ_GPIO_RISC0_EN;
 	if(falling){
 		BM_SET(reg_gpio_pol(pin), bit);
 	}else{
 		BM_CLR(reg_gpio_pol(pin), bit);
 	}
+
+/*clear gpio interrupt sorce （after setting gpio polarity,before enable interrupt ）to avoid unexpected interrupt. confirm by minghai*/
+
+	reg_irq_src |= FLD_IRQ_GPIO_EN|FLD_IRQ_GPIO_RISC0_EN|FLD_IRQ_GPIO_RISC1_EN|FLD_IRQ_GPIO_RISC2_EN;
+	reg_irq_mask |= FLD_IRQ_GPIO_RISC0_EN;
 }
 
 /**
@@ -519,12 +535,15 @@ static inline void gpio_set_interrupt_risc1(GPIO_PinTypeDef pin, GPIO_PolTypeDef
 {
 	unsigned char	bit = pin & 0xff;
 	BM_SET(reg_gpio_irq_risc1_en(pin), bit);
-	reg_irq_mask |= FLD_IRQ_GPIO_RISC1_EN;
 	if(falling){
 		BM_SET(reg_gpio_pol(pin), bit);
 	}else{
 		BM_CLR(reg_gpio_pol(pin), bit);
 	}
+/*clear gpio interrupt sorce （after setting gpio polarity,before enable interrupt ）to avoid unexpected interrupt. confirm by minghai*/
+
+	reg_irq_src |= FLD_IRQ_GPIO_EN|FLD_IRQ_GPIO_RISC0_EN|FLD_IRQ_GPIO_RISC1_EN|FLD_IRQ_GPIO_RISC2_EN;
+	reg_irq_mask |= FLD_IRQ_GPIO_RISC1_EN;
 }
 
 /**
@@ -537,12 +556,17 @@ static inline void gpio_set_interrupt_risc2(GPIO_PinTypeDef pin, GPIO_PolTypeDef
 {
 	unsigned char	bit = pin & 0xff;
 	BM_SET(reg_gpio_irq_risc2_en(pin), bit);
-	reg_irq_mask |= FLD_IRQ_GPIO_RISC2_EN;
+
 	if(falling){
 		BM_SET(reg_gpio_pol(pin), bit);
 	}else{
 		BM_CLR(reg_gpio_pol(pin), bit);
 	}
+
+	/*clear gpio interrupt sorce （after setting gpio polarity,before enable interrupt ）to avoid unexpected interrupt. confirm by minghai*/
+
+	reg_irq_src |= FLD_IRQ_GPIO_EN|FLD_IRQ_GPIO_RISC0_EN|FLD_IRQ_GPIO_RISC1_EN|FLD_IRQ_GPIO_RISC2_EN;
+	reg_irq_mask |= FLD_IRQ_GPIO_RISC2_EN;
 }
 
 /**
@@ -596,14 +620,16 @@ static inline void gpio_set_interrupt(GPIO_PinTypeDef pin, GPIO_PolTypeDef falli
 {
 	unsigned char	bit = pin & 0xff;
 	BM_SET(reg_gpio_irq_wakeup_en(pin), bit);
-	reg_irq_mask |= FLD_IRQ_GPIO_EN ;
 	reg_gpio_wakeup_irq |= FLD_GPIO_CORE_INTERRUPT_EN;
 	if(falling){
 		BM_SET(reg_gpio_pol(pin), bit);
 	}else{
-		BM_CLR(reg_gpio_pol(pin), bit);
-	}
-	BM_SET(reg_gpio_irq_wakeup_en(pin), bit);
+	BM_CLR(reg_gpio_pol(pin), bit);}
+
+	/*clear gpio interrupt sorce （after setting gpio polarity,before enable interrupt ）to avoid unexpected interrupt. confirm by minghai*/
+
+	reg_irq_src |= FLD_IRQ_GPIO_EN|FLD_IRQ_GPIO_RISC0_EN|FLD_IRQ_GPIO_RISC1_EN|FLD_IRQ_GPIO_RISC2_EN;
+	reg_irq_mask |= FLD_IRQ_GPIO_EN ;
 }
 
 /**
