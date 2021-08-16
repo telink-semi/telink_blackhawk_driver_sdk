@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?>
-
-<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073" moduleId="org.eclipse.cdt.core.settings" name="8231_PM_Demo">
@@ -15,7 +13,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073" name="8231_PM_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073" name="8231_PM_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
 					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073." name="/" resourcePath="">
 						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.865679775" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug">
 							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.493753206" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug"/>
@@ -46,9 +44,12 @@
 								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.1782181079" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
 							</tool>
 							<tool command="tc32-elf-ld --gc-sections" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.788165488" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug">
-								<option id="com.telink.tc32eclipse.linker.option.libpath.226294881" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath"/>
-								<option id="com.telink.tc32eclipse.linker.option.otherobjs.11617796" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231/lib_rf_pm.a}&quot;"/>
+								<option id="com.telink.tc32eclipse.linker.option.libpath.226294881" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.linker.option.otherobjs.11617796" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs"/>
+								<option id="com.telink.tc32eclipse.linker.option.libs.583617181" superClass="com.telink.tc32eclipse.linker.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="8231"/>
 								</option>
 								<inputType id="com.telink.tc32eclipse.tool.linker.input.717708038" name="OBJ Files" superClass="com.telink.tc32eclipse.tool.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -66,7 +67,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_I2C_Demo|vendor/5313_ADC_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="vendor/DUT_Test|vendor/8231_Test_Demo|vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_I2C_Demo|vendor/5313_ADC_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -88,7 +89,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634" name="8231_GPIO_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634" name="8231_GPIO_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
 					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634." name="/" resourcePath="">
 						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.544298764" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug">
 							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.1606145789" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug"/>
@@ -119,9 +120,12 @@
 								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.1224599354" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
 							</tool>
 							<tool command="tc32-elf-ld --gc-sections" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.124985121" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug">
-								<option id="com.telink.tc32eclipse.linker.option.libpath.1120260053" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath"/>
-								<option id="com.telink.tc32eclipse.linker.option.otherobjs.1600199788" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231/lib_rf_pm.a}&quot;"/>
+								<option id="com.telink.tc32eclipse.linker.option.libpath.1120260053" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.linker.option.otherobjs.1600199788" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs"/>
+								<option id="com.telink.tc32eclipse.linker.option.libs.667594109" superClass="com.telink.tc32eclipse.linker.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="8231"/>
 								</option>
 								<inputType id="com.telink.tc32eclipse.tool.linker.input.930934668" name="OBJ Files" superClass="com.telink.tc32eclipse.tool.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -139,7 +143,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_ADC_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="vendor/DUT_Test|vendor/8231_Test_Demo|vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_ADC_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -161,7 +165,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1710980098" name="8231_I2C_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1710980098" name="8231_I2C_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
 					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1710980098." name="/" resourcePath="">
 						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.308361862" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug">
 							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.1426062181" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug"/>
@@ -192,9 +196,12 @@
 								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.1985323810" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
 							</tool>
 							<tool command="tc32-elf-ld --gc-sections" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.78725660" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug">
-								<option id="com.telink.tc32eclipse.linker.option.libpath.2130102314" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath"/>
-								<option id="com.telink.tc32eclipse.linker.option.otherobjs.411431103" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231/lib_rf_pm.a}&quot;"/>
+								<option id="com.telink.tc32eclipse.linker.option.libpath.2130102314" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.linker.option.otherobjs.411431103" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs"/>
+								<option id="com.telink.tc32eclipse.linker.option.libs.561544273" superClass="com.telink.tc32eclipse.linker.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="8231"/>
 								</option>
 								<inputType id="com.telink.tc32eclipse.tool.linker.input.1822410120" name="OBJ Files" superClass="com.telink.tc32eclipse.tool.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -235,7 +242,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_ADC_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="vendor/DUT_Test|vendor/8231_Test_Demo|vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_ADC_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -257,7 +264,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.762635365" name="8231_Timer_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.762635365" name="8231_Timer_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
 					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.762635365." name="/" resourcePath="">
 						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.285860012" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug">
 							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.800917962" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug"/>
@@ -288,9 +295,12 @@
 								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.455337382" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
 							</tool>
 							<tool command="tc32-elf-ld --gc-sections" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.534351319" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug">
-								<option id="com.telink.tc32eclipse.linker.option.libpath.1720612031" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath"/>
-								<option id="com.telink.tc32eclipse.linker.option.otherobjs.616346080" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231/lib_rf_pm.a}&quot;"/>
+								<option id="com.telink.tc32eclipse.linker.option.libpath.1720612031" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.linker.option.otherobjs.616346080" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs"/>
+								<option id="com.telink.tc32eclipse.linker.option.libs.811689463" superClass="com.telink.tc32eclipse.linker.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="8231"/>
 								</option>
 								<inputType id="com.telink.tc32eclipse.tool.linker.input.1034217500" name="OBJ Files" superClass="com.telink.tc32eclipse.tool.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -331,7 +341,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_I2C_Demo|vendor/5313_ADC_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="vendor/DUT_Test|vendor/8231_Test_Demo|vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_I2C_Demo|vendor/5313_ADC_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -353,7 +363,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1710980098.15777197" name="8231_ADC_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1710980098.15777197" name="8231_ADC_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
 					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1710980098.15777197." name="/" resourcePath="">
 						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.1152137644" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug">
 							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.1798644292" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug"/>
@@ -384,9 +394,12 @@
 								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.2104849649" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
 							</tool>
 							<tool command="tc32-elf-ld --gc-sections" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.2065065074" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug">
-								<option id="com.telink.tc32eclipse.linker.option.libpath.1346994899" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath"/>
-								<option id="com.telink.tc32eclipse.linker.option.otherobjs.155388971" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231/lib_rf_pm.a}&quot;"/>
+								<option id="com.telink.tc32eclipse.linker.option.libpath.1346994899" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.linker.option.otherobjs.155388971" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs"/>
+								<option id="com.telink.tc32eclipse.linker.option.libs.894650786" superClass="com.telink.tc32eclipse.linker.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="8231"/>
 								</option>
 								<inputType id="com.telink.tc32eclipse.tool.linker.input.667039544" name="OBJ Files" superClass="com.telink.tc32eclipse.tool.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -427,7 +440,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="vendor/DUT_Test|vendor/8231_Test_Demo|vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -449,7 +462,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906" name="8231_QDEC_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906" name="8231_QDEC_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
 					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906." name="/" resourcePath="">
 						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.1195712085" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug">
 							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.803771011" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug"/>
@@ -480,9 +493,12 @@
 								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.1926137893" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
 							</tool>
 							<tool command="tc32-elf-ld --gc-sections" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.1814521527" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug">
-								<option id="com.telink.tc32eclipse.linker.option.libpath.19222329" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath"/>
-								<option id="com.telink.tc32eclipse.linker.option.otherobjs.942178962" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231/lib_rf_pm.a}&quot;"/>
+								<option id="com.telink.tc32eclipse.linker.option.libpath.19222329" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.linker.option.otherobjs.942178962" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs"/>
+								<option id="com.telink.tc32eclipse.linker.option.libs.83343684" superClass="com.telink.tc32eclipse.linker.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="8231"/>
 								</option>
 								<inputType id="com.telink.tc32eclipse.tool.linker.input.677436189" name="OBJ Files" superClass="com.telink.tc32eclipse.tool.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -523,7 +539,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_ADC_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="vendor/DUT_Test|vendor/8231_Test_Demo|vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_ADC_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -545,7 +561,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.760969675" name="8231_SPI_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.760969675" name="8231_SPI_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
 					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.760969675." name="/" resourcePath="">
 						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.1695983606" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug">
 							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.1124531633" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug"/>
@@ -576,9 +592,12 @@
 								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.512293454" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
 							</tool>
 							<tool command="tc32-elf-ld --gc-sections" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.610281654" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug">
-								<option id="com.telink.tc32eclipse.linker.option.libpath.1598644459" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath"/>
-								<option id="com.telink.tc32eclipse.linker.option.otherobjs.969157322" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231/lib_rf_pm.a}&quot;"/>
+								<option id="com.telink.tc32eclipse.linker.option.libpath.1598644459" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.linker.option.otherobjs.969157322" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs"/>
+								<option id="com.telink.tc32eclipse.linker.option.libs.830945437" superClass="com.telink.tc32eclipse.linker.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="8231"/>
 								</option>
 								<inputType id="com.telink.tc32eclipse.tool.linker.input.886871760" name="OBJ Files" superClass="com.telink.tc32eclipse.tool.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -642,7 +661,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_ADC_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="vendor/DUT_Test|vendor/8231_Test_Demo|vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_ADC_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -664,7 +683,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.234192962" name="8231_PWM_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.234192962" name="8231_PWM_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
 					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.234192962." name="/" resourcePath="">
 						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.876481769" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug">
 							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.1769855251" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug"/>
@@ -695,9 +714,12 @@
 								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.381760682" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
 							</tool>
 							<tool command="tc32-elf-ld --gc-sections" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.1571483479" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug">
-								<option id="com.telink.tc32eclipse.linker.option.libpath.232482354" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath"/>
-								<option id="com.telink.tc32eclipse.linker.option.otherobjs.1353370745" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231/lib_rf_pm.a}&quot;"/>
+								<option id="com.telink.tc32eclipse.linker.option.libpath.232482354" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.linker.option.otherobjs.1353370745" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs"/>
+								<option id="com.telink.tc32eclipse.linker.option.libs.882336841" superClass="com.telink.tc32eclipse.linker.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="8231"/>
 								</option>
 								<inputType id="com.telink.tc32eclipse.tool.linker.input.989241409" name="OBJ Files" superClass="com.telink.tc32eclipse.tool.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -761,7 +783,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_ADC_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="vendor/DUT_Test|vendor/8231_Test_Demo|vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_ADC_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -783,7 +805,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.1298308741" name="8231_UART_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.1298308741" name="8231_UART_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
 					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.1298308741." name="/" resourcePath="">
 						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.807745540" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug">
 							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.1377451636" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug"/>
@@ -814,9 +836,12 @@
 								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.775911809" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
 							</tool>
 							<tool command="tc32-elf-ld --gc-sections" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.1407694950" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug">
-								<option id="com.telink.tc32eclipse.linker.option.libpath.1344659453" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath"/>
-								<option id="com.telink.tc32eclipse.linker.option.otherobjs.32266017" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231/lib_rf_pm.a}&quot;"/>
+								<option id="com.telink.tc32eclipse.linker.option.libpath.1344659453" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.linker.option.otherobjs.32266017" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs"/>
+								<option id="com.telink.tc32eclipse.linker.option.libs.713721082" superClass="com.telink.tc32eclipse.linker.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="8231"/>
 								</option>
 								<inputType id="com.telink.tc32eclipse.tool.linker.input.192700455" name="OBJ Files" superClass="com.telink.tc32eclipse.tool.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -880,7 +905,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="vendor/8231_FLASH_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_ADC_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="vendor/DUT_Test|vendor/8231_Test_Demo|vendor/8231_FLASH_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_ADC_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -902,7 +927,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.1087526646" name="8231_AES_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.1087526646" name="8231_AES_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
 					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.1087526646." name="/" resourcePath="">
 						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.417115467" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug">
 							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.16278772" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug"/>
@@ -933,9 +958,12 @@
 								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.383546324" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
 							</tool>
 							<tool command="tc32-elf-ld --gc-sections" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.1269449109" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug">
-								<option id="com.telink.tc32eclipse.linker.option.libpath.1717977221" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath"/>
-								<option id="com.telink.tc32eclipse.linker.option.otherobjs.2101744490" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231/lib_rf_pm.a}&quot;"/>
+								<option id="com.telink.tc32eclipse.linker.option.libpath.1717977221" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.linker.option.otherobjs.2101744490" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs"/>
+								<option id="com.telink.tc32eclipse.linker.option.libs.563785630" superClass="com.telink.tc32eclipse.linker.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="8231"/>
 								</option>
 								<inputType id="com.telink.tc32eclipse.tool.linker.input.182933321" name="OBJ Files" superClass="com.telink.tc32eclipse.tool.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -950,29 +978,6 @@
 								<option id="com.telink.tc32eclipse.objcopy.flash.option.output.1748155030" name="Output Filename" superClass="com.telink.tc32eclipse.objcopy.flash.option.output" value="${ConfigName}.bin" valueType="string"/>
 							</tool>
 							<tool id="com.telink.tc32eclipse.tool.size.TC32Win.app.debug.1226456259" name="Print Size" superClass="com.telink.tc32eclipse.tool.size.TC32Win.app.debug"/>
-						</toolChain>
-					</folderInfo>
-					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.1087526646.256460754" name="/" resourcePath="vendor/8231_AES_Demo">
-						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.1326642451" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug" unusedChildren="">
-							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.16278772.1034430811" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.16278772"/>
-							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objdump.app.debug.589570642.125988891" name="Generate Extended Listing (Source + generated Assembler)" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objdump.app.debug.589570642"/>
-							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.size.app.debug.1882482088.1581565791" name="Print Size" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.size.app.debug.1882482088"/>
-							<targetPlatform id="com.telink.tc32eclipse.targetplatform.TC32Win.app.debug" name="TC32 Cross-Target" superClass="com.telink.tc32eclipse.targetplatform.TC32Win.app.debug"/>
-							<tool id="com.telink.tc32eclipse.tool.assembler.TC32Win.app.debug.1275644079" name="TC32 CC/Assembler" superClass="com.telink.tc32eclipse.tool.assembler.TC32Win.app.debug.2005335445">
-								<inputType id="com.telink.tc32eclipse.tool.assembler.input.657914529" superClass="com.telink.tc32eclipse.tool.assembler.input"/>
-							</tool>
-							<tool id="com.telink.tc32eclipse.tool.compiler.TC32Win.app.debug.293438073" name="TC32 Compiler" superClass="com.telink.tc32eclipse.tool.compiler.TC32Win.app.debug.576356809">
-								<option id="com.telink.tc32eclipse.compiler.option.def.820168063" name="Define Syms (-D)" superClass="com.telink.tc32eclipse.compiler.option.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="__PROJECT_5313_AES_DEMO__=1"/>
-									<listOptionValue builtIn="false" value="CHIP_TYPE=CHIP_TYPE_5313"/>
-								</option>
-								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.872565241" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
-							</tool>
-							<tool id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.1106201390" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.1269449109"/>
-							<tool id="com.telink.tc32eclipse.tool.archiver.TC32Win.base.1177223425" name="TC32 Archiver" superClass="com.telink.tc32eclipse.tool.archiver.TC32Win.base.1717668276"/>
-							<tool id="com.telink.tc32eclipse.tool.objdump.TC32Win.app.debug.400798806" name="TC32 Create Extended Listing" superClass="com.telink.tc32eclipse.tool.objdump.TC32Win.app.debug.459927926"/>
-							<tool id="com.telink.tc32eclipse.tool.objcopy.flash.TC32Win.app.debug.2129620649" name="TC32 Create Flash image" superClass="com.telink.tc32eclipse.tool.objcopy.flash.TC32Win.app.debug.523349662"/>
-							<tool id="com.telink.tc32eclipse.tool.size.TC32Win.app.debug.1309116811" name="Print Size" superClass="com.telink.tc32eclipse.tool.size.TC32Win.app.debug.1226456259"/>
 						</toolChain>
 					</folderInfo>
 					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.1087526646.vendor/5313_QDEC_Demo" name="/" resourcePath="vendor/8231_QDEC_Demo">
@@ -998,8 +1003,31 @@
 							<tool id="com.telink.tc32eclipse.tool.size.TC32Win.app.debug.547828573" name="Print Size" superClass="com.telink.tc32eclipse.tool.size.TC32Win.app.debug.1226456259"/>
 						</toolChain>
 					</folderInfo>
+					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1982970634.281113906.1087526646.256460754" name="/" resourcePath="vendor/8231_AES_Demo">
+						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.1326642451" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug" unusedChildren="">
+							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.16278772.1034430811" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.16278772"/>
+							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objdump.app.debug.589570642.125988891" name="Generate Extended Listing (Source + generated Assembler)" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objdump.app.debug.589570642"/>
+							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.size.app.debug.1882482088.1581565791" name="Print Size" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.size.app.debug.1882482088"/>
+							<targetPlatform id="com.telink.tc32eclipse.targetplatform.TC32Win.app.debug" name="TC32 Cross-Target" superClass="com.telink.tc32eclipse.targetplatform.TC32Win.app.debug"/>
+							<tool id="com.telink.tc32eclipse.tool.assembler.TC32Win.app.debug.1275644079" name="TC32 CC/Assembler" superClass="com.telink.tc32eclipse.tool.assembler.TC32Win.app.debug.2005335445">
+								<inputType id="com.telink.tc32eclipse.tool.assembler.input.657914529" superClass="com.telink.tc32eclipse.tool.assembler.input"/>
+							</tool>
+							<tool id="com.telink.tc32eclipse.tool.compiler.TC32Win.app.debug.293438073" name="TC32 Compiler" superClass="com.telink.tc32eclipse.tool.compiler.TC32Win.app.debug.576356809">
+								<option id="com.telink.tc32eclipse.compiler.option.def.820168063" name="Define Syms (-D)" superClass="com.telink.tc32eclipse.compiler.option.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__PROJECT_5313_AES_DEMO__=1"/>
+									<listOptionValue builtIn="false" value="CHIP_TYPE=CHIP_TYPE_5313"/>
+								</option>
+								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.872565241" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
+							</tool>
+							<tool id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.1106201390" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.1269449109"/>
+							<tool id="com.telink.tc32eclipse.tool.archiver.TC32Win.base.1177223425" name="TC32 Archiver" superClass="com.telink.tc32eclipse.tool.archiver.TC32Win.base.1717668276"/>
+							<tool id="com.telink.tc32eclipse.tool.objdump.TC32Win.app.debug.400798806" name="TC32 Create Extended Listing" superClass="com.telink.tc32eclipse.tool.objdump.TC32Win.app.debug.459927926"/>
+							<tool id="com.telink.tc32eclipse.tool.objcopy.flash.TC32Win.app.debug.2129620649" name="TC32 Create Flash image" superClass="com.telink.tc32eclipse.tool.objcopy.flash.TC32Win.app.debug.523349662"/>
+							<tool id="com.telink.tc32eclipse.tool.size.TC32Win.app.debug.1309116811" name="Print Size" superClass="com.telink.tc32eclipse.tool.size.TC32Win.app.debug.1226456259"/>
+						</toolChain>
+					</folderInfo>
 					<sourceEntries>
-						<entry excluding="vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_ADC_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="vendor/DUT_Test|vendor/8231_Test_Demo|vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_ADC_Demo|vendor/5313_I2C_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -1021,7 +1049,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1536384557" name="8231_RF_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1536384557" name="8231_RF_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
 					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1536384557." name="/" resourcePath="">
 						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.1277978145" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug">
 							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.300285343" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug"/>
@@ -1052,9 +1080,12 @@
 								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.588438712" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
 							</tool>
 							<tool command="tc32-elf-ld --gc-sections" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.1933569962" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug">
-								<option id="com.telink.tc32eclipse.linker.option.libpath.769403632" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath"/>
-								<option id="com.telink.tc32eclipse.linker.option.otherobjs.453721239" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231/lib_rf_pm.a}&quot;"/>
+								<option id="com.telink.tc32eclipse.linker.option.libpath.769403632" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.linker.option.otherobjs.453721239" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs"/>
+								<option id="com.telink.tc32eclipse.linker.option.libs.792401357" superClass="com.telink.tc32eclipse.linker.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="8231"/>
 								</option>
 								<inputType id="com.telink.tc32eclipse.tool.linker.input.1328588200" name="OBJ Files" superClass="com.telink.tc32eclipse.tool.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -1072,7 +1103,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_I2C_Demo|vendor/5313_ADC_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="vendor/DUT_Test|vendor/8231_Test_Demo|vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_PM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_I2C_Demo|vendor/5313_ADC_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5313_PM_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -1094,7 +1125,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.837204444" name="8231_FLASH_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.837204444" name="8231_FLASH_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
 					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.837204444." name="/" resourcePath="">
 						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.391056297" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug">
 							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.760688962" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug"/>
@@ -1125,9 +1156,12 @@
 								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.1915507574" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
 							</tool>
 							<tool command="tc32-elf-ld --gc-sections" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.1672869186" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug">
-								<option id="com.telink.tc32eclipse.linker.option.libpath.1486417027" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath"/>
-								<option id="com.telink.tc32eclipse.linker.option.otherobjs.1858829424" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231/lib_rf_pm.a}&quot;"/>
+								<option id="com.telink.tc32eclipse.linker.option.libpath.1486417027" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.linker.option.otherobjs.1858829424" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs"/>
+								<option id="com.telink.tc32eclipse.linker.option.libs.499092210" superClass="com.telink.tc32eclipse.linker.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="8231"/>
 								</option>
 								<inputType id="com.telink.tc32eclipse.tool.linker.input.1507907260" name="OBJ Files" superClass="com.telink.tc32eclipse.tool.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -1145,7 +1179,83 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="vendor/8231_PM_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_I2C_Demo|vendor/5313_ADC_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="vendor/DUT_Test|vendor/8231_Test_Demo|vendor/8231_PM_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_I2C_Demo|vendor/5313_ADC_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+			<storageModule moduleId="org.eclipse.cdt.core.language.mapping"/>
+			<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+			<storageModule moduleId="scannerConfiguration"/>
+			<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+		</cconfiguration>
+		<cconfiguration id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1117747053">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1117747053" moduleId="org.eclipse.cdt.core.settings" name="8231_Test_Demo">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.telink.tc32eclipse.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.telink.tc32eclipse.buildArtefactType.app,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1117747053" name="8231_Test_Demo" parent="com.telink.tc32eclipse.configuration.app.debug" prebuildStep="">
+					<folderInfo id="com.telink.tc32eclipse.configuration.app.debug.1970299845.351063629.799040038.2071696073.1117747053." name="/" resourcePath="">
+						<toolChain id="com.telink.tc32eclipse.toolchain.TC32Win.app.debug.1258089925" name="TC32-GCC Toolchain" superClass="com.telink.tc32eclipse.toolchain.TC32Win.app.debug">
+							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug.1400209564" name="Generate binary file for Flash memory" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objcopy.flash.app.debug"/>
+							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.objdump.app.debug.528022092" name="Generate Extended Listing (Source + generated Assembler)" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.objdump.app.debug"/>
+							<option id="com.telink.tc32eclipse.toolchain.options.toolchain.size.app.debug.24705711" name="Print Size" superClass="com.telink.tc32eclipse.toolchain.options.toolchain.size.app.debug"/>
+							<targetPlatform id="com.telink.tc32eclipse.targetplatform.TC32Win.app.debug.2076997576" name="TC32 Cross-Target" superClass="com.telink.tc32eclipse.targetplatform.TC32Win.app.debug"/>
+							<builder buildPath="${workspace_loc:/ble_lt_ms/Debug}" id="com.telink.tc32eclipse.target.builder.TC32Win.app.debug.1664388491" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GNU Make Builder" superClass="com.telink.tc32eclipse.target.builder.TC32Win.app.debug"/>
+							<tool id="com.telink.tc32eclipse.tool.assembler.TC32Win.app.debug.394627103" name="TC32 CC/Assembler" superClass="com.telink.tc32eclipse.tool.assembler.TC32Win.app.debug">
+								<option id="com.telink.tc32eclipse.assembler.option.debug.level.892815370" name="Generate Debugging Info" superClass="com.telink.tc32eclipse.assembler.option.debug.level" value="com.telink.tc32eclipse.assembler.option.debug.level.none" valueType="enumerated"/>
+								<option id="com.telink.tc32eclipse.asm.option.flags.1059676179" name="Other GCC Flags" superClass="com.telink.tc32eclipse.asm.option.flags" value="-DMCU_STARTUP_8231" valueType="string"/>
+								<inputType id="com.telink.tc32eclipse.tool.assembler.input.1053926826" superClass="com.telink.tc32eclipse.tool.assembler.input"/>
+							</tool>
+							<tool command="tc32-elf-gcc -ffunction-sections -fdata-sections" id="com.telink.tc32eclipse.tool.compiler.TC32Win.app.debug.1331325698" name="TC32 Compiler" superClass="com.telink.tc32eclipse.tool.compiler.TC32Win.app.debug">
+								<option id="com.telink.tc32eclipse.compiler.option.debug.level.81671447" name="Generate Debugging Info" superClass="com.telink.tc32eclipse.compiler.option.debug.level" value="com.telink.tc32eclipse.compiler.option.debug.level.none" valueType="enumerated"/>
+								<option id="com.telink.tc32eclipse.compiler.option.optimize.717564286" name="Optimization Level" superClass="com.telink.tc32eclipse.compiler.option.optimize" value="com.telink.tc32eclipse.compiler.optimize.two" valueType="enumerated"/>
+								<option id="com.telink.tc32eclipse.compiler.option.incpath.851575174" name="Include Paths (-I)" superClass="com.telink.tc32eclipse.compiler.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.compiler.option.def.737305370" name="Define Syms (-D)" superClass="com.telink.tc32eclipse.compiler.option.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__PROJECT_8231_TEST_DEMO__=1"/>
+									<listOptionValue builtIn="false" value="CHIP_TYPE=CHIP_TYPE_8231"/>
+								</option>
+								<option id="com.telink.tc32eclipse.compiler.option.std.1178486110" name="Language Standard" superClass="com.telink.tc32eclipse.compiler.option.std" value="com.telink.tc32eclipse.compiler.option.std.gnu99" valueType="enumerated"/>
+								<option id="com.telink.tc32eclipse.compiler.option.otherflags.1736881559" name="Other flags" superClass="com.telink.tc32eclipse.compiler.option.otherflags" value="-fshort-wchar -fms-extensions" valueType="string"/>
+								<option id="com.telink.tc32eclipse.compiler.option.optimize.packstruct.1171945215" name="Pack structs (-fpack-struct)" superClass="com.telink.tc32eclipse.compiler.option.optimize.packstruct" value="true" valueType="boolean"/>
+								<option id="com.telink.tc32eclipse.compiler.option.optimize.shortenums.913058421" name="Short enums (-fshort-enums)" superClass="com.telink.tc32eclipse.compiler.option.optimize.shortenums" value="true" valueType="boolean"/>
+								<option id="com.telink.tc32eclipse.compiler.option.optimize.other.341719104" name="Other Optimization Flags" superClass="com.telink.tc32eclipse.compiler.option.optimize.other" value="-finline-small-functions" valueType="string"/>
+								<inputType id="com.telink.tc32eclipse.compiler.TC32Win.input.678644645" name="C Source Files" superClass="com.telink.tc32eclipse.compiler.TC32Win.input"/>
+							</tool>
+							<tool command="tc32-elf-ld --gc-sections" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug.53774454" name="TC32 C Linker" superClass="com.telink.tc32eclipse.tool.linker.TC32Win.app.debug">
+								<option id="com.telink.tc32eclipse.linker.option.libpath.1704332054" name="Libraries Path (-L)" superClass="com.telink.tc32eclipse.linker.option.libpath" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/8231}&quot;"/>
+								</option>
+								<option id="com.telink.tc32eclipse.linker.option.otherobjs.1955480879" name="Other Objects (*.o)" superClass="com.telink.tc32eclipse.linker.option.otherobjs" valueType="userObjs"/>
+								<option id="com.telink.tc32eclipse.linker.option.libs.1736988421" superClass="com.telink.tc32eclipse.linker.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="8231"/>
+								</option>
+								<inputType id="com.telink.tc32eclipse.tool.linker.input.124993576" name="OBJ Files" superClass="com.telink.tc32eclipse.tool.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.telink.tc32eclipse.tool.archiver.TC32Win.base.441514816" name="TC32 Archiver" superClass="com.telink.tc32eclipse.tool.archiver.TC32Win.base"/>
+							<tool id="com.telink.tc32eclipse.tool.objdump.TC32Win.app.debug.663352120" name="TC32 Create Extended Listing" superClass="com.telink.tc32eclipse.tool.objdump.TC32Win.app.debug">
+								<option id="com.telink.tc32eclipse.objdump.option.output.695342815" name="Output Filename" superClass="com.telink.tc32eclipse.objdump.option.output" value="${ConfigName}.lst" valueType="string"/>
+							</tool>
+							<tool id="com.telink.tc32eclipse.tool.objcopy.flash.TC32Win.app.debug.159024864" name="TC32 Create Flash image" superClass="com.telink.tc32eclipse.tool.objcopy.flash.TC32Win.app.debug">
+								<option id="com.telink.tc32eclipse.objcopy.flash.option.output.1452088184" name="Output Filename" superClass="com.telink.tc32eclipse.objcopy.flash.option.output" value="${ConfigName}.bin" valueType="string"/>
+							</tool>
+							<tool id="com.telink.tc32eclipse.tool.size.TC32Win.app.debug.192249742" name="Print Size" superClass="com.telink.tc32eclipse.tool.size.TC32Win.app.debug"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="vendor/DUT_Test|vendor/8231_PM_Demo|vendor/8231_FLASH_Demo|vendor/8231_UART_Demo|vendor/8231_Timer_Demo|vendor/8231_SPI_Demo|vendor/8231_RF_Demo|vendor/8231_QDEC_Demo|vendor/8231_PWM_Demo|vendor/8231_I2C_Demo|vendor/8231_GPIO_Demo|vendor/8231_AES_Demo|vendor/8231_ADC_Demo|vendor/8258_ble_driver_test|vendor/8258_RF_Demo|vendor/8258_FLASH_Demo|vendor/8255_PM_Demo|vendor/8258_ADC_Demo|vendor/5316_PM_Demo|vendor/5317_I2C_Demo|boot/5316|vendor/5317_UART_Demo|vendor/5317_PM_Demo|vendor/5317_RF_Demo|vendor/8255_ble_remote|vendor/5313_UART_Demo|vendor/5313_I2C_Demo|vendor/5313_ADC_Demo|vendor/8255_driver_test|vendor/8258_TIMER_Demo|vendor/5317_SPI_Demo|vendor/5313_GPIO_Demo|vendor/5317_TIMER_Demo|vendor/8258_PWM_Demo|vendor/5317_Flash_Demo|drivers/5316|vendor/5317_ADC_Demo|vendor/8258_EMI_Demo|vendor/5313_AES_Demo|vendor/8258_Flash_Demo|vendor/5317_AUDIO_Demo|vendor/8258_SPI_Demo|vendor/8255_RF_Demo|vendor/8258_AUDIO_Demo|drivers/5317|vendor/5313_PWM_Demo|vendor/5317_PWM_Demo|vendor/5313_SPI_Demo|vendor/8258_I2C_Demo|vendor/5313_RF_Demo|vendor/5316_RF_Demo|vendor/5313_QDEC_Demo|vendor/8258_UART_Demo|vendor/5313_Timer_Demo|drivers/8255" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

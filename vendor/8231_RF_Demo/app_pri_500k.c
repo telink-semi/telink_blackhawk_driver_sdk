@@ -1,29 +1,48 @@
 /********************************************************************************************************
- * @file     app.c
+ * @file	app_pri_500k.c
  *
- * @brief    This is the RF file for TLSR8231
+ * @brief	This is the source file for TLSR8231
  *
- * @author	 Telink
- * @date     May 8, 2018
+ * @author	Driver Group
+ * @date	May 12, 2019
  *
- * @par      Copyright (c) 2018, Telink Semiconductor (Shanghai) Co., Ltd.
- *           All rights reserved.
+ * @par     Copyright (c) 2018, Telink Semiconductor (Shanghai) Co., Ltd. ("TELINK")
+ *          All rights reserved.
  *
- *           The information contained herein is confidential property of Telink
- *           Semiconductor (Shanghai) Co., Ltd. and is available under the terms
- *           of Commercial License Agreement between Telink Semiconductor (Shanghai)
- *           Co., Ltd. and the licensee or the terms described here-in. This heading
- *           MUST NOT be removed from this file.
+ *          Redistribution and use in source and binary forms, with or without
+ *          modification, are permitted provided that the following conditions are met:
  *
- *           Licensees are granted free, non-transferable use of the information in this
- *           file under Mutual Non-Disclosure Agreement. NO WARRENTY of ANY KIND is provided.
- * @par      History:
- * 			 1.initial release(DEC. 26 2018)
+ *              1. Redistributions of source code must retain the above copyright
+ *              notice, this list of conditions and the following disclaimer.
  *
- * @version  A001
+ *              2. Unless for usage inside a TELINK integrated circuit, redistributions
+ *              in binary form must reproduce the above copyright notice, this list of
+ *              conditions and the following disclaimer in the documentation and/or other
+ *              materials provided with the distribution.
+ *
+ *              3. Neither the name of TELINK, nor the names of its contributors may be
+ *              used to endorse or promote products derived from this software without
+ *              specific prior written permission.
+ *
+ *              4. This software, with or without modification, must only be used with a
+ *              TELINK integrated circuit. All other usages are subject to written permission
+ *              from TELINK and different commercial license may apply.
+ *
+ *              5. Licensee shall be solely responsible for any claim to the extent arising out of or
+ *              relating to such deletion(s), modification(s) or alteration(s).
+ *
+ *          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ *          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ *          WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ *          DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDER BE LIABLE FOR ANY
+ *          DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ *          (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ *          LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ *          ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ *          (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ *          SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  *******************************************************************************************************/
-
 #include "drivers.h"
 #include "app_config.h"
 #if(RF_MODE==RF_PRIVATE_500K)
@@ -40,10 +59,10 @@
 
 #define ESB_MODE  1
 #define SB_MODE   2
-#define NORDIC_MODE			    ESB_MODE
+#define PRIVATE_MODE			    ESB_MODE
 #define RX_PAYLOAD_LEN			32
 
-#define RF_FREQ					47//ble:RF_FREQ*2+2   private&nordic:2400+RF_FREQ
+#define RF_FREQ					47//ble:RF_FREQ*2+2   private:2400+RF_FREQ
 #define RF_POWER				RF_POWER_0dBm
 #define ACCESS_CODE				0x39517696
 
@@ -51,8 +70,8 @@ volatile unsigned int rx_cnt=0;
 volatile unsigned int tx_cnt=0;
 unsigned char  rx_packet[128]  __attribute__ ((aligned (4)));
 unsigned char  ble_tx_packet[48] __attribute__ ((aligned (4))) = {0x23,0x00,0x00,0x00,0x00,0x21,0,0,0,0,0x33,0x44,0x55,0x66,0x77,0x88,0x99,0xaa,0xbb,0xcc,0xdd,0xee,0xff};
-unsigned char  Nordic_SB_tx_packet[48] __attribute__ ((aligned (4))) = {0x20,0x00,0x00,0x00,0x20,0x00,0x00,0x00,0x00,0x33,0x44,0x55,0x66,0x77,0x88,0x99,0xaa,0xbb,0xcc,0xdd,0xee,0xff};
-unsigned char  Nordic_ESB_tx_packet[48] __attribute__ ((aligned (4))) = {0x21,0x00,0x00,0x00,0x20,0x00,0x00,0x00,0x00,0x33,0x04,0x55,0x66,0x77,0x88,0x99,0xaa,0xbb,0xcc,0xdd,0xee,0xff};
+unsigned char  Private_SB_tx_packet[48] __attribute__ ((aligned (4))) = {0x20,0x00,0x00,0x00,0x20,0x00,0x00,0x00,0x00,0x33,0x44,0x55,0x66,0x77,0x88,0x99,0xaa,0xbb,0xcc,0xdd,0xee,0xff};
+unsigned char  Private_ESB_tx_packet[48] __attribute__ ((aligned (4))) = {0x21,0x00,0x00,0x00,0x20,0x00,0x00,0x00,0x00,0x33,0x04,0x55,0x66,0x77,0x88,0x99,0xaa,0xbb,0xcc,0xdd,0xee,0xff};
 
 
 
@@ -74,9 +93,9 @@ void user_init()
 	rf_set_channel(RF_FREQ,0);
 	rf_set_acc_code(ACCESS_CODE);
 
-#if(NORDIC_MODE == ESB_MODE)
+#if(PRIVATE_MODE == ESB_MODE)
 
-#elif(NORDIC_MODE == SB_MODE)
+#elif(PRIVATE_MODE == SB_MODE)
 	rf_pri_set_shockburst_len(RX_PAYLOAD_LEN);
 #endif
 }
@@ -86,10 +105,10 @@ void main_loop (void)
 #if(RF_TRX_MODE==TX)
 	while(1)
 	{
-		#if(NORDIC_MODE == ESB_MODE)
-		rf_start_stx (Nordic_ESB_tx_packet, get_sys_tick() + 16*1000*TX_INTERVAL_MS);
-		#elif(NORDIC_MODE == SB_MODE)
-		rf_start_stx (Nordic_SB_tx_packet, get_sys_tick() + 16*1000*TX_INTERVAL_MS);
+		#if(PRIVATE_MODE == ESB_MODE)
+		rf_start_stx (Private_ESB_tx_packet, get_sys_tick() + 16*1000*TX_INTERVAL_MS);
+		#elif(PRIVATE_MODE == SB_MODE)
+		rf_start_stx (Private_SB_tx_packet, get_sys_tick() + 16*1000*TX_INTERVAL_MS);
 		#endif
 		while(!rf_is_tx_finish());
 		rf_clr_tx_finish();
@@ -105,9 +124,9 @@ void main_loop (void)
 	{
 		if(rf_is_rx_finish())
 		{
-		#if(NORDIC_MODE == ESB_MODE)
+		#if(PRIVATE_MODE == ESB_MODE)
 			if(RF_1M_500K_PACKET_CRC_OK(rx_packet)&&RF_PRI_PACKET_LENGTH_OK(rx_packet))
-		#elif(NORDIC_MODE == SB_MODE)
+		#elif(PRIVATE_MODE == SB_MODE)
 			if(RF_1M_500K_PACKET_CRC_OK(rx_packet))
 		#endif
 			{
@@ -137,9 +156,9 @@ void user_init()
 	rf_set_channel(RF_FREQ,0);
 	rf_set_acc_code(ACCESS_CODE);
 
-#if(NORDIC_MODE == ESB_MODE)
+#if(PRIVATE_MODE == ESB_MODE)
 
-#elif(NORDIC_MODE == SB_MODE)
+#elif(PRIVATE_MODE == SB_MODE)
 	rf_pri_set_shockburst_len(RX_PAYLOAD_LEN);
 #endif
 
@@ -154,11 +173,11 @@ void main_loop (void)
 	while(1)
 	{
 		delay_ms(1);
-		Nordic_ESB_tx_packet[5]+=1;
-		#if(NORDIC_MODE == ESB_MODE)
-		rf_tx_pkt (Nordic_ESB_tx_packet);
-		#elif(NORDIC_MODE == SB_MODE)
-		rf_tx_pkt (Nordic_SB_tx_packet);
+		Private_ESB_tx_packet[5]+=1;
+		#if(PRIVATE_MODE == ESB_MODE)
+		rf_tx_pkt (Private_ESB_tx_packet);
+		#elif(PRIVATE_MODE == SB_MODE)
+		rf_tx_pkt (Private_SB_tx_packet);
 		#endif
 		while(!rf_is_tx_finish());
 		rf_clr_tx_finish();
@@ -175,9 +194,9 @@ void main_loop (void)
 	{
 		if(rf_is_rx_finish())
 		{
-		#if(NORDIC_MODE == ESB_MODE)
+		#if(PRIVATE_MODE == ESB_MODE)
 			if(RF_1M_500K_PACKET_CRC_OK(rx_packet)&&RF_PRI_PACKET_LENGTH_OK(rx_packet))
-		#elif(NORDIC_MODE == SB_MODE)
+		#elif(PRIVATE_MODE == SB_MODE)
 			if(RF_1M_500K_PACKET_CRC_OK(rx_packet))
 		#endif
 			{

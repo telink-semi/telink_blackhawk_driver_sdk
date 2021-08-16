@@ -1,35 +1,60 @@
 /********************************************************************************************************
- * @file     pm.h
+ * @file	pm.h
  *
- * @brief    This is the header file for TLSR8231
+ * @brief	This is the header file for TLSR8231
  *
- * @author	 Telink
- * @date     May 12, 2019
+ * @author	Driver Group
+ * @date	May 12, 2019
  *
- * @par      Copyright (c) 2018, Telink Semiconductor (Shanghai) Co., Ltd.
- *           All rights reserved.
+ * @par     Copyright (c) 2018, Telink Semiconductor (Shanghai) Co., Ltd. ("TELINK")
+ *          All rights reserved.
  *
- *           The information contained herein is confidential property of Telink
- *           Semiconductor (Shanghai) Co., Ltd. and is available under the terms
- *           of Commercial License Agreement between Telink Semiconductor (Shanghai)
- *           Co., Ltd. and the licensee or the terms described here-in. This heading
- *           MUST NOT be removed from this file.
+ *          Redistribution and use in source and binary forms, with or without
+ *          modification, are permitted provided that the following conditions are met:
  *
- *           Licensees are granted free, non-transferable use of the information in this
- *           file under Mutual Non-Disclosure Agreement. NO WARRENTY of ANY KIND is provided.
- * @par      History:
- * 			 1.initial release(DEC. 26 2018)
+ *              1. Redistributions of source code must retain the above copyright
+ *              notice, this list of conditions and the following disclaimer.
  *
- * @version  A001
+ *              2. Unless for usage inside a TELINK integrated circuit, redistributions
+ *              in binary form must reproduce the above copyright notice, this list of
+ *              conditions and the following disclaimer in the documentation and/or other
+ *              materials provided with the distribution.
+ *
+ *              3. Neither the name of TELINK, nor the names of its contributors may be
+ *              used to endorse or promote products derived from this software without
+ *              specific prior written permission.
+ *
+ *              4. This software, with or without modification, must only be used with a
+ *              TELINK integrated circuit. All other usages are subject to written permission
+ *              from TELINK and different commercial license may apply.
+ *
+ *              5. Licensee shall be solely responsible for any claim to the extent arising out of or
+ *              relating to such deletion(s), modification(s) or alteration(s).
+ *
+ *          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ *          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ *          WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ *          DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDER BE LIABLE FOR ANY
+ *          DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ *          (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ *          LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ *          ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ *          (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ *          SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  *******************************************************************************************************/
-
 #pragma once
 
 #include "gpio.h"
 #include "bsp.h"
 
 #define PM_PAD_FILTER_EN           	 1			//Pad filter enable/disable
+
+//If the program running on the chip uses the deep retention function, RETENTION_MODE_ENABLE needs to be set to 1.
+//(Note that S factory chips do not support deep retention. Both C factory and T factory chips support deep retention,
+//but T factory no longer produces chips)confirmed by wenfeng,modify by junhui(20210525)
+#define RETENTION_MODE_ENABLE		 0
+
 /**
  * @brief   5316 analog register 0x34-0x3e can store information when MCU in deep sleep mode
  *          store your information in these ana_regs before deep sleep by calling analog_write function
@@ -87,6 +112,7 @@
 /**
  * @brief  Retention mode reference voltage 1.8v or 1.2v.
  */
+#if RETENTION_MODE_ENABLE
 typedef enum{
 	RETENTION_MODE_DISABLE 		= 0x00,
 	RETENTION_REF_VOL_1_2V 		= BIT(4),
@@ -94,13 +120,17 @@ typedef enum{
 }RetentionMode_TypeDef;
 
 #define RetentionModeFlag	RETENTION_REF_VOL_1_8V
+#endif
+
 /**
  * @brief Sleep mode define.
  */
 typedef enum{
 	SUSPEND_MODE 		        = 0x00,
 	DEEPSLEEP_MODE    	        = 0x01,
+#if RETENTION_MODE_ENABLE
 	RETENTION_DEEPSLEEP_MODE	= DEEPSLEEP_MODE | RetentionModeFlag,
+#endif
 }SleepMode_TypeDef;
 
 /**
@@ -110,7 +140,7 @@ typedef enum {
 	 PM_WAKEUP_PAD   = BIT(4),
 	 PM_WAKEUP_CORE  = BIT(5),
 	 PM_WAKEUP_TIMER = BIT(6),
-	 PM_WAKEUP_GPIO  = PM_WAKEUP_PAD | PM_WAKEUP_CORE, // 一般不用PM_WAKEUP_CORE,  PM_WAKEUP_CORE 只能在suspend 上使用
+	 PM_WAKEUP_GPIO  = PM_WAKEUP_PAD | PM_WAKEUP_CORE, // 一悴籔M_WAKEUP_CORE,  PM_WAKEUP_CORE 只suspend 使
 }SleepWakeupSrc_TypeDef;
 
 /**
@@ -171,7 +201,7 @@ _attribute_ram_code_ _attribute_no_inline_ void  sleep_start(void);
 void pm_set_gpio_wakeup (GPIO_PinTypeDef pin, GPIO_LevelTypeDef pol, int en);
 
 /**
- * @brief      This function serves to set the working mode of MCU,e.g. suspend mode, deep sleep mode, deep sleep with SRAM retention mode and shutdown mode.
+ * @brief      This function serves to set the working mode of MCU,e.g. suspend mode, deep sleep mode, and shutdown mode.
  * @param[in]  deepsleep - sleep mode type select.
  * @param[in]  wakeup_src - wake up source select.
  * @param[in]  wakeup_tick - the time of short sleep, which means MCU can sleep for less than 5 minutes.

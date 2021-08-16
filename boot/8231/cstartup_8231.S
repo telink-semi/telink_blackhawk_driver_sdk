@@ -1,8 +1,59 @@
-
+/********************************************************************************************************
+ * @file	cstartup_8231.S
+ *
+ * @brief	This is the boot file for TLSR8231
+ *
+ * @author	Driver Group
+ * @date	May 12, 2019
+ *
+ * @par     Copyright (c) 2018, Telink Semiconductor (Shanghai) Co., Ltd. ("TELINK")
+ *          All rights reserved.
+ *
+ *          Redistribution and use in source and binary forms, with or without
+ *          modification, are permitted provided that the following conditions are met:
+ *
+ *              1. Redistributions of source code must retain the above copyright
+ *              notice, this list of conditions and the following disclaimer.
+ *
+ *              2. Unless for usage inside a TELINK integrated circuit, redistributions
+ *              in binary form must reproduce the above copyright notice, this list of
+ *              conditions and the following disclaimer in the documentation and/or other
+ *              materials provided with the distribution.
+ *
+ *              3. Neither the name of TELINK, nor the names of its contributors may be
+ *              used to endorse or promote products derived from this software without
+ *              specific prior written permission.
+ *
+ *              4. This software, with or without modification, must only be used with a
+ *              TELINK integrated circuit. All other usages are subject to written permission
+ *              from TELINK and different commercial license may apply.
+ *
+ *              5. Licensee shall be solely responsible for any claim to the extent arising out of or
+ *              relating to such deletion(s), modification(s) or alteration(s).
+ *
+ *          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ *          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ *          WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ *          DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDER BE LIABLE FOR ANY
+ *          DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ *          (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ *          LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ *          ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ *          (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ *          SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ *******************************************************************************************************/
 #ifdef MCU_STARTUP_8231
 
 #ifndef __LOAD_RAM_SIZE__
 #define	__LOAD_RAM_SIZE__		0xc
+#endif
+
+#if RETENTION_MODE_ENABLE
+//If the chip runs the OTP program and the program uses the retention function, OTP_RETENTION_FLAG needs to be set to 1
+// (the SMIC factory chip does not support the retention function, the CSMC factory chip version number is EC and CC chip test is passed)
+//confirmed by guangjun,modify by junhui(20210524)
+#define OTP_RETENTION_FLAG	0
 #endif
 
 	.code	16
@@ -17,7 +68,10 @@
 	.equ SVC_MODE, 		0x13	@ Supervisor mode 
 
 	.equ IRQ_STK_SIZE,	0x100
-	.equ __LOAD_RAM, 	__LOAD_RAM_SIZE__
+	.equ __LOAD_FLASH, 	1
+	.equ __LOAD_DUT, 	0
+	.equ __LOAD_RAM, 	0
+
 	
 @********************************************************************************************************
 @                                            TC32 EXCEPTION VECTORS
@@ -28,6 +82,8 @@
 	.global	 	__irq
 	.global 	__start
 	.global		__LOAD_RAM
+	.global		__LOAD_DUT
+	.global		__LOAD_FLASH
 
 __start:					@ MUST,  referenced by boot.link
 
@@ -91,6 +147,35 @@ FLL_STK_END:
 	tmcsr	r0	
 	tloadr	r0, DAT0 + 12
 	tmov	r13, r0  
+
+#if RETENTION_MODE_ENABLE
+@********************************************************************************************************
+@                              		 OTP ENABLE INITIALIZATION
+@********************************************************************************************************
+//When the chip ran the OTP program, after retention came back, some of the OTP function configuration was lost
+//(digital registers 0x602, 0x603, and 0x12),resulting in the inability to fetch instructions from the otp, resulting in a crash.
+//(If the chip runs the flash program, this part of processing is not required)confirmed by guangjun,modify by junhui(20210524)
+#if OTP_RETENTION_FLAG
+	tloadr	r1,	OTP_ENABLE
+	tloadrb	r0,	[r1]
+	tcmp	r0, #1				@If 0x603 register is 0, it means coming back from retention.
+	tjeq	OTP_SET_DONE
+
+	tloadr		r1,	OTP_CTRL
+	tmovs		r0,	#124		@0x12 register is set to 0x7c (OTP PCEN is enabled)
+	tstorerb	r0, [r1, #0]
+
+	tloadr	r1,	OTP_ENABLE
+	tmov		r0,	#1			@0x603 register is set to 1 (Use OTP ack is enabled)
+	tstorerb	r0, [r1]
+	tsub		r1,	#1
+	tmovs		r0,	#152 		@0x602 register is set to 0x98 (restart from sram)
+	tstorerb	r0, [r1, #0]
+OTP_SET_DONE:
+#endif
+
+#endif
+
 @********************************************************************************************************
 @                                    .BSS INITIALIZATION FOR 0
 @********************************************************************************************************
@@ -152,14 +237,15 @@ FLASH_WAKEUP_END:
 #endif
 */
 
+#if RETENTION_MODE_ENABLE
 @********************************************************************************************************
 @                                    RETENTION DATA INITIALIZATION
 @********************************************************************************************************
 #if 1
 COPY_RET_DATA:
 	tloadr		r1, DATA_I					@ r1 = _rstored_
-	tloadr		r2, DATA_I+4				@ r2 = _retention_data_start_
-	tloadr		r3, DATA_I+8				@ r3 = _retention_data_end_
+	tloadr		r2, DATA_I+16				@ r2 = _retention_data_start_
+	tloadr		r3, DATA_I+20				@ r3 = _retention_data_end_
 COPY_RET_DATA_BEGIN:
 	tcmp		r2, r3						@
 	tjge		COPY_RET_DATA_END			@ r2>=r3 jump to COPY_RET_DATA_END
@@ -170,15 +256,16 @@ COPY_RET_DATA_BEGIN:
 	tj			COPY_RET_DATA_BEGIN			@ jump to COPY_RET_DATA_BEGIN
 COPY_RET_DATA_END:
 #endif
+#endif
 
 
 
 @********************************************************************************************************
 @                                    DATA INITIALIZATION
 @********************************************************************************************************
-	tloadr		r1, DATA_I+12
-	tloadr		r2, DATA_I+16
-	tloadr		r3, DATA_I+20
+	tloadr		r1, DATA_I+4
+	tloadr		r2, DATA_I+8
+	tloadr		r3, DATA_I+12
 COPY_DATA:
 	tcmp		r2, r3
 	tjge		COPY_DATA_END
@@ -222,17 +309,31 @@ DAT0:
 
 DATA_I:
 	.word   (_rstored_)                 @0
-	.word   (_retention_data_start_)    @4
-    .word   (_retention_data_end_)      @8
+
 	.word	_dstored_
 	.word	_start_data_
 	.word	_end_data_
+
+#if RETENTION_MODE_ENABLE
+	.word   (_retention_data_start_)    @16
+    .word   (_retention_data_end_)      @20
+#endif
+
 	//.word	(0x0080000c)                @24
 
 FLL_D:
 	.word	0xffffffff
 	.word	(_start_data_)
 	.word	(0x80a000)
+
+#if RETENTION_MODE_ENABLE
+#if OTP_RETENTION_FLAG
+OTP_ENABLE:
+	.word	(0x800603)
+OTP_CTRL:
+	.word	(0x800012)
+#endif
+#endif
 
 	.align 4
 __irq:
