@@ -43,7 +43,7 @@
    + Improve the performance of ble2m.
    
 ### Note
-*RF 
+* RF 
    + This version is compatible with SMIC chips. RF-related rf_set_power_level_index and agc table are compatible with version id. If you use SMIC chips for development, you need to update to this version or a later version of the driver for development, otherwise the RF function will be abnormal. 
 <hr style="border-bottom:2.5px solid rgb(146, 240, 161)">
 
@@ -57,7 +57,7 @@
 
 * **RF**
     * 修改以下函数接口：rf_ble_set_crc、rf_ble_set_crc_value、rf_set_ble_crc_adv，之前版本功能是错误的
-*EMI 
+* EMI 
 	+ 修复了emi程序中写在otp内的tp校准值不起作用的问题。
 	
 ### Features
@@ -73,10 +73,10 @@
 
 ### BREAKING CHANGES
 
-*PM 
+* PM 
 	+ 删除了deep retention睡眠模式，修改后的代码做了如下测试，程序烧录到OTP、flash两种情况均正常。
 	
-*RF
+* RF
 	+ 为兼容SMIC厂芯片通过version id进行了driver配置兼容操作（包括设置能量：rf_set_power_level_index，agc table 兼容）。后续如果使用SMIC厂的芯片进行开发需更新到该版本或以后版本驱动进行开发，否则RF功能会出现异常。
 
 ### Refactoring
