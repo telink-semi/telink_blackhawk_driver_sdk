@@ -5,18 +5,55 @@
 * SDK version : telink_blackhawk_driver_sdk v2.2.1.
 * This version sdk support 8231.
 
+### BREAKING CHANGES
+* N/A
+
+### Bug Fixes
+* N/A
+
 ### Refactoring
 * **rf**
   * (8231)Normalizes the naming of content related to private schemas.
+
+### Features
+* N/A
+
+### Performance Improvements
+
+* N/A
+
+### Note
+
+* N/A
+
+<hr style="border-bottom:2.5px solid rgb(146, 240, 161)">
 
 ### 版本
 
 * SDK版本: telink_blackhawk_driver_sdk v2.2.1。
 * 此版本SDK支持8231芯片。
 
+
+### BREAKING CHANGES
+* N/A
+
+### Bug Fixes
+* N/A
+
 ### Refactoring
 * **rf**
   * (8231)规范化与私有模式相关内容的命名。
+
+### Features
+* N/A
+
+### Performance Improvements
+
+* N/A
+
+### Note
+
+* N/A
 
 ## V2.2.0
 
