@@ -1,8 +1,8 @@
-﻿## V2.2.1
+## V2.2.1
 
 ### Version
 
-* SDK version : telink_blackhawk_driver_sdk v2.2.0.
+* SDK version : telink_blackhawk_driver_sdk v2.2.1.
 * This version sdk support 8231.
 
 ### Refactoring
@@ -11,7 +11,7 @@
 
 ### 版本
 
-* SDK版本: telink_blackhawk_driver_sdk v2.2.0。
+* SDK版本: telink_blackhawk_driver_sdk v2.2.1。
 * 此版本SDK支持8231芯片。
 
 ### Refactoring
