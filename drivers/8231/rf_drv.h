@@ -583,7 +583,7 @@ static inline unsigned short rf_access_code_32to16 (unsigned int code)
 	return r;
 }
 /**
-*	@brief		this function is to set Private mode payload len for RF.
+*	@brief		This function is to set Private mode payload len for RF.
 *	@param[in]	len - length of payload.
 *	@return	 	none.
 */
