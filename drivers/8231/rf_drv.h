@@ -905,7 +905,7 @@ unsigned char  Private_TPLL_tx_packet[48] __attribute__ ((aligned (4))) = {0x21,
 | ^ | ^ | ^ | rf_set_rx_buff() | rf_set_rx_buff(rx_packet,64, 0) | set buffer for rx packet | ^ |
 | ^ | ^ | ^ | rf_set_rx_on() || start Rx mode | ^ |
 | ^ | ^ | main_loop() | if( rf_is_rx_finish() ) | rf_is_rx_finish() | determine whether rx packet is finished | ^ |
-| ^ | ^ | ^ | > if(RF_NRF_TPLL_PACKET_CRC_OK(rx_packet)&&RF_PRI_PACKET_LENGTH_OK(rx_packet)) || determine whether rx packet is right | ^ |
+| ^ | ^ | ^ | > if(RF_TPLL_PACKET_CRC_OK(rx_packet)&&RF_PRI_PACKET_LENGTH_OK(rx_packet)) || determine whether rx packet is right | ^ |
 | ^ | ^ | ^ | >> rx_cnt++ || Perform packet parsing and processing | ^ |
 | ^ | ^ | ^ | > rf_clr_rx_finish() || clear the flag of rx finished | ^ |
 | ^ | ^ | ^ | > rf_set_tx_rx_off_auto() || turn off RF auto mode | ^ |
@@ -922,7 +922,7 @@ unsigned char  Private_TPLL_tx_packet[48] __attribute__ ((aligned (4))) = {0x21,
 | ^ | ^ | ^ | rf_set_rx_buff() | rf_set_rx_buff(rx_packet,64, 0) | set buffer for rx packet | ^ |
 | ^ | ^ | ^ | rf_set_rx_on() || start Rx mode | ^ |
 | ^ | ^ | main_loop() | if( rf_is_rx_finish() ) | rf_is_rx_finish() | determine whether rx packet is finished | ^ |
-| ^ | ^ | ^ | > if(RF_NRF_SB_PACKET_CRC_OK(rx_packet)) | RF_NRF_SB_PACKET_CRC_OK() | determine whether rx packet is right | ^ |
+| ^ | ^ | ^ | > if(RF_SB_PACKET_CRC_OK(rx_packet)) | RF_SB_PACKET_CRC_OK() | determine whether rx packet is right | ^ |
 | ^ | ^ | ^ | >> rx_cnt++ || Perform packet parsing and processing | ^ |
 | ^ | ^ | ^ | > rf_clr_rx_finish() || clear the flag of rx finished | ^ |
 | ^ | ^ | ^ | > rf_set_tx_rx_off_auto() || turn off RF auto mode | ^ |
